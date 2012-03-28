@@ -1,0 +1,97 @@
+{
+    "name": "Earth Hour 2012",
+    "description": "Saving the world, 60 minutes every 365 days at a time.",
+    "keywords" : [
+        "earth-hour", "earth", "hour", "environment"
+        ],
+    "version": "0.0.1",
+    "contributors": [
+    {
+        "name" : "Michael Sofaer",
+        "email" : "michael@cloudflare.com"
+    },
+    {
+        "name" : "Chris Joel",
+        "email" : "chris@cloudflare.com"
+    },
+    {
+        "name" : "Katie G.",
+        "email" : "katie@eitak.se"
+    }
+    ],
+        "repository" : {
+            "type" : "git",
+            "url" : "https://github.com/eitak-ssim/Earth-Hour-2012.git"
+        },
+        "main" : "./public/javascripts/stop_censorship.js",
+        "dependencies" : {
+            "jquery"    :  "~1.7"
+        },
+        "licenses" : [
+        {
+            "type": "tos",
+            "url": "http://unlicense.org"
+        }
+    ],
+        "implements" : "AMD",
+        "scripts" : {
+        },
+        "config" : {
+            "assets" : {
+                "logos" : {
+                    "200px": "./public/images/logo-200.png",
+                    "132px": "./public/images/logo-132.png"
+                }
+            },
+            "payment": {},
+            "details": {
+                "Category": "Anti-Censorship",
+                "Language": "English",
+                "Restrictions": "None",
+                "Supporting": "<a href='http://americancensorship.org'>americancensorship.org</a>",
+                "Script Injection": "<script>alert('No thanks')</script>"
+            },
+            "interface": [
+            {
+                "name": "Badge Position",
+                "id": "position_x",
+                "required": true,
+                "description": "which side of the screen should your badge be displayed on?",
+                "type": "select",
+                "options": [
+                {
+                    "label": "Top Right",
+                    "value": "right"
+                },
+                {
+                    "label": "Top Left",
+                    "value": "left"
+                }
+                ]
+            },
+            {
+                "id": "handle",
+                "name": "Twitter Username",
+                "description": "Enter your Twitter username to include it in the suggested tweet (optional). If there is no Twitter username, your site URL will be included instead.",
+                "type": "string"
+            },
+            {
+                "id": "persistent",
+                "name": "Persistence",
+                "description": "Text is blacked out on first visit only. If you would like this to happen on every visit, switch to the Persistent mode.",
+                "type": "select",
+                "options": [
+                {
+                    "label": "First visit only",
+                    "value": false
+                },
+                {
+                    "label": "Every visit",
+                    "value": true
+                }
+                ]
+            }
+
+            ]
+        }
+}
