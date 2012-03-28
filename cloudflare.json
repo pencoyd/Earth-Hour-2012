@@ -221,25 +221,7 @@
                 	"value": "2330"
                 }
                 ]
-            },
-            {
-                "id": "persistent",
-                "name": "Persistence",
-                "description": "Allow users to hide the notice and undarken the site?",
-                "type": "select",
-                "options": [
-                {
-                    "label": "Yes",
-                    "value": false
-                },
-                {
-                    "label": "No",
-                    "value": true,
-                    "selected": "selected"
-                }
-                ]
             }
-
             ]
         }
 }
