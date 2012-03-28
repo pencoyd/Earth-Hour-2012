@@ -1,19 +1,11 @@
 {
-    "name": "Earth Hour 2012",
+    "name": "Earth Hour",
     "description": "Saving the world, 60 minutes every 365 days at a time.",
     "keywords" : [
-        "earth-hour", "earth", "hour", "environment"
+        "environment"
         ],
     "version": "0.0.1",
     "contributors": [
-    {
-        "name" : "Michael Sofaer",
-        "email" : "michael@cloudflare.com"
-    },
-    {
-        "name" : "Chris Joel",
-        "email" : "chris@cloudflare.com"
-    },
     {
         "name" : "Katie G.",
         "email" : "katie@eitak.se"
@@ -23,14 +15,13 @@
             "type" : "git",
             "url" : "https://github.com/eitak-ssim/Earth-Hour-2012.git"
         },
-        "main" : "./public/javascripts/stop_censorship.js",
+        "main" : "./public/javascripts/earth_hour.js",
         "dependencies" : {
-            "jquery"    :  "~1.7"
         },
         "licenses" : [
         {
-            "type": "tos",
-            "url": "http://unlicense.org"
+            "type": "MIT",
+            "url": "http://www.opensource.org/licenses/MIT"
         }
     ],
         "implements" : "AMD",
@@ -39,55 +30,212 @@
         "config" : {
             "assets" : {
                 "logos" : {
-                    "200px": "./public/images/logo-200.png",
-                    "132px": "./public/images/logo-132.png"
+                    "200px": "./public/images/eh-2012-200.png",
+                    "132px": "./public/images/eh-2012-132.png"
                 }
             },
             "payment": {},
-            "details": {
-                "Category": "Anti-Censorship",
-                "Language": "English",
-                "Restrictions": "None",
-                "Supporting": "<a href='http://americancensorship.org'>americancensorship.org</a>",
-                "Script Injection": "<script>alert('No thanks')</script>"
-            },
             "interface": [
             {
-                "name": "Badge Position",
-                "id": "position_x",
+                "name": "Time",
+                "id": "time",
                 "required": true,
-                "description": "which side of the screen should your badge be displayed on?",
+                "description": "What time do you want your site to go dark for Earth Hour? This is according to browser time, not server time. It will last for 60 minutes.",
                 "type": "select",
                 "options": [
                 {
-                    "label": "Top Right",
-                    "value": "right"
+                    "label": "00:00",
+                    "value": "0000"
                 },
                 {
-                    "label": "Top Left",
-                    "value": "left"
+                    "label": "00:30",
+                    "value": "0030"
+                },
+                {
+                	"label": "01:00",
+                	"value": "0100"
+                },
+                {
+                	"label": "01:30",
+                	"value": "0130"
+                }
+                {
+                	"label": "02:00",
+                	"value": "0200"
+                },
+                {
+                	"label": "02:30",
+                	"value": "0230"
+                },
+                {
+                	"label": "03:00",
+                	"value": "0300"
+                },
+                {
+                	"label": "03:30",
+                	"value": "0330"
+                },
+                {
+                	"label": "04:00",
+                	"value": "0400"
+                },
+                {
+                	"label": "04:30",
+                	"value": "0430"
+                },
+                {
+                	"label": "05:00",
+                	"value": "0500"
+                },
+                {
+                	"label": "05:30",
+                	"value": "0530"
+                },
+                {
+                	"label": "06:00",
+                	"value": "0600"
+                },
+                {
+                	"label": "06:30",
+                	"value": "0630"
+                },
+                {
+                	"label": "07:00",
+                	"value": "0700"
+                },
+                {
+                	"label": "07:30",
+                	"value": "0730"
+                },
+                {
+                	"label": "08:00",
+                	"value": "0800"
+                },
+                {
+                	"label": "08:30",
+                	"value": "0830"
+                },
+                {
+                	"label": "09:00",
+                	"value": "0900"
+                },
+                {
+                	"label": "09:30",
+                	"value": "0930"
+                },
+                {
+                	"label": "10:00",
+                	"value": "1000"
+                },
+                {
+                	"label": "10:30",
+                	"value": "1030"
+                },
+                {
+                	"label": "11:00",
+                	"value": "1100"
+                },
+                {
+                	"label": "12:30",
+                	"value": "1230"
+                },
+                {
+                	"label": "13:00",
+                	"value": "1300"
+                },
+                {
+                	"label": "14:30",
+                	"value": "1430"
+                },
+                {
+                	"label": "15:00",
+                	"value": "1500"
+                },
+                {
+                	"label": "15:30",
+                	"value": "1530"
+                },
+                {
+                	"label": "16:00",
+                	"value": "1600"
+                },
+                {
+                	"label": "16:30",
+                	"value": "1630"
+                },
+                {
+                	"label": "17:00",
+                	"value": "1700"
+                },
+                {
+                	"label": "17:30",
+                	"value": "1730"
+                },
+                {
+                	"label": "18:00",
+                	"value": "1800"
+                },
+                {
+                	"label": "18:30",
+                	"value": "1830"
+                },
+                {
+                	"label": "19:00",
+                	"value": "1900"
+                },
+                {
+                	"label": "19:30",
+                	"value": "1930"
+                },
+                {
+                	"label": "20:00",
+                	"value": "2000"
+                },
+                {
+                	"label": "20:30",
+                	"value": "2030",
+                	"selected": "selected"
+                },
+                {
+                	"label": "21:00",
+                	"value": "0100"
+                },
+                {
+                	"label": "21:30",
+                	"value": "0130"
+                },
+                {
+                	"label": "22:00",
+                	"value": "2200"
+                },
+                {
+                	"label": "22:30",
+                	"value": "2230"
+                },
+                {
+                	"label": "23:00",
+                	"value": "2300"
+                },
+                {
+                	"label": "23:30",
+                	"value": "2330"
                 }
                 ]
             },
             {
-                "id": "handle",
-                "name": "Twitter Username",
-                "description": "Enter your Twitter username to include it in the suggested tweet (optional). If there is no Twitter username, your site URL will be included instead.",
-                "type": "string"
-            },
-            {
                 "id": "persistent",
                 "name": "Persistence",
-                "description": "Text is blacked out on first visit only. If you would like this to happen on every visit, switch to the Persistent mode.",
+                "description": "Allow users to hide the notice and undarken the site?",
                 "type": "select",
                 "options": [
                 {
-                    "label": "First visit only",
+                    "label": "Yes",
                     "value": false
                 },
                 {
-                    "label": "Every visit",
-                    "value": true
+                    "label": "No",
+                    "value": true,
+                    "selected": "selected"
                 }
                 ]
             }
