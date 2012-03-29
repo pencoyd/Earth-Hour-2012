@@ -45,6 +45,13 @@ CloudFlare.define("earthhour", ['earthhour/config'], function(_config){
 	}
 	
 	EH.prototype.setup() {
-		
+		var theme = document.createElement('style');
+		theme.setAttribute("type","text/css");
+		var style = ".earthhour{font-family:sans-serif;}.earthhour.darken{position:absolute;overflow:hidden;z-index:9997;margin:-10px;background-color:black;width:120%;height:1000%;}.earthhour.main.outside{position:absolute;display:inline-block;z-index:9999;margin-top:20px;margin-left:auto;margin-right:auto;width:60%;background-color:white;padding:6px;border-radius:12px;box-shadow:0px 0px 8px black}.earthhour.main.pad{z-index:9999;background-color:#e0e0e0;box-shadow:0px 0px 4px #e0e0e0;padding:4px;border-radius:6px;}.earthhour.main.inside{background-color:#222222;text-align:center;z-index:9999;color:white;padding: 4px;border-radius:6px;}.earthhour.main.container{text-align:center;width:100%}";
+		if(this.useFilter){
+			style +=".earthhour.darken{filter:alpha(opacity='0.75');}";
+		} else {
+			style +=".earthhour.darken{opacity:0.75;}";
+		}
 	}
 });
