@@ -7,18 +7,30 @@ CloudFlare.define("earthhour", ['earthhour/config'], function(_config){
 	var eh = new EH(_config);
 	
 	EH.prototype.activate = function() {
-		this.preSetup()
+		if(/[0-2][0-9]:[0-5][0-9]/.test(this.config.time)) {
+			this.preSetup();
+		} else {
+			CloudFlare.require(["cloudflare/console"],function(c){
+				c.error("EARTHHOUR: Invalid time in app configuration.");
+			});
+		}
 	};
 	
 	EH.prototype.preSetup = function() {
 		if(this.isTime(this.config.time)) {
 			this.setup();
+			CloudFlare.require(["cloudflare/console"],function(c){
+				c.log("EARTHHOUR: It is now Earth Hour.")
+			});
 		}
 	};
 	
 	EH.prototype.isTime = function(inp) {
 		var inSp = inp.split(":");
 		var inH = parseInt(insp[0]);
+		if(inH == 24) {
+			inH = 0; // Catch for 24:XX
+		}
 		var inM = parseInt(insp[1]);
 		var sDO = new Date(); // Start
 		var eDO = new Date(); // End
@@ -28,10 +40,10 @@ CloudFlare.define("earthhour", ['earthhour/config'], function(_config){
 		sDO.setMinutes(inM);
 		endM = inM;
 		if(inH == 23) {
-			endH = 0;
+			endH = 0; // Catch for 23:XX
 			endY = [2012,3,1];
 		} else {
-			endH = inH+1;
+			endH = inH+1; // Add one to all else
 			endY = [2012,2,31];
 		}
 		eDO.setFullYear(endY[0],endY[1],endY[2]);
