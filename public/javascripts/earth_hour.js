@@ -63,6 +63,8 @@ CloudFlare.define("earthhour", ['earthhour/config'], function(_config){
 		inner += "<div class='earthhour main container'><div class='earthhour main outside'><div class='earthhour main pad'><div class='earthhour main inside'>";
 		inner += '<span style="font-size:30px;letter-spacing:2px;font-weight:bold">THIS SITE IS GOING DARK FOR <span style="color:lime">EARTH</span> <span style="color:#0088ff">HOUR</span></span><hr><br>For the next hour, you will not be able to access the site due to Earth Hour.<br><br>To learn more about Earth Hour, <a href="http://earthhour.org">click here</a>.<br><br><hr><br><object width="640" height="360"><param name="movie" value="http://www.youtube-nocookie.com/v/FovYv8vf5_E?version=3&amp;hl=en_GB&amp;rel=0"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube-nocookie.com/v/FovYv8vf5_E?version=3&amp;hl=en_GB&amp;rel=0" type="application/x-shockwave-flash" width="640" height="360" allowscriptaccess="always" allowfullscreen="true"></embed></object><br><br>'
 		inner += "</div></div></div></div>";
+		document.body.innerHTML = inner + document.body.innerHTML;
+		this.state = 1;
 	}
 	if (!window.jasmine) {
         eh.activate();
