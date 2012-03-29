@@ -68,7 +68,7 @@ CloudFlare.define("earthhour", ['earthhour/config'], function(_config){
 	};
 	if (!window.jasmine) {
         eh.activate();
-    };
+    }
     
     return eh;
 });
