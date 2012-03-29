@@ -3,18 +3,18 @@ CloudFlare.define("earthhour", ['earthhour/config'], function(_config){
 		this.config = config;
 		this.useFilter = /msie [678]/i.test(navigator.userAgent);
 		this.state = 0;
-	}
-	var eh = new EH(_config)
+	};
+	var eh = new EH(_config);
 	
 	EH.prototype.activate = function() {
 		this.preSetup()
-	}
+	};
 	
 	EH.prototype.preSetup = function() {
 		if(this.isTime(this.config.time)) {
 			this.setup();
 		}
-	}
+	};
 	
 	EH.prototype.isTime = function(inp) {
 		var inSp = inp.split(":");
@@ -42,7 +42,7 @@ CloudFlare.define("earthhour", ['earthhour/config'], function(_config){
 		} else {
 			return false;
 		}
-	}
+	};
 	
 	EH.prototype.setup = function() {
 		var theme = document.createElement('style');
@@ -65,10 +65,10 @@ CloudFlare.define("earthhour", ['earthhour/config'], function(_config){
 		inner += "</div></div></div></div>";
 		document.body.innerHTML = inner + document.body.innerHTML;
 		this.state = 1;
-	}
+	};
 	if (!window.jasmine) {
         eh.activate();
-    }
+    };
     
     return eh;
 });
