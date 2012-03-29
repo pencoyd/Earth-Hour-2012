@@ -27,6 +27,7 @@
         "implements" : "AMD",
         "scripts" : {
         },
+        
         "config" : {
             "assets" : {
                 "logos" : {
@@ -35,6 +36,12 @@
                 }
             },
             "payment": {},
+            "details": {
+               "Category": "Environment",
+               "Language": "English",
+               "Restrictions": "None",
+               "Supporting": "<a href='http://earthhour.org'>EarthHour.org</a>",
+           },
             "interface": [
             {
                 "name": "Time",
